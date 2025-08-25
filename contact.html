@@ -1,0 +1,271 @@
+
+
+
+
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Application Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+  </head>
+  <body class="bg-gray-950 text-gray-200">
+
+    <!-- Loader -->
+    <div id="loader" class="fixed inset-0 flex items-center justify-center bg-black/70 z-50 hidden">
+      <div class="animate-spin rounded-full h-16 w-16 border-4 border-yellow-400 border-t-transparent"></div>
+    </div>
+
+    <section class="max-w-5xl mx-auto px-4 py-12 relative">
+      <div class="rounded-3xl border border-yellow-400/30 bg-gray-900/80 backdrop-blur p-6 md:p-10 shadow-xl">
+        
+        <!-- STEP 1: Video Confirmation -->
+    <div id="videoStep" class="text-center">
+  <h1 class="text-2xl md:text-3xl font-bold mb-6 text-yellow-400">Application Form</h1>
+  <p class="block font-semibold mb-4">Have you watched the complete Video? <span class="text-red-500">*</span></p>
+  
+  <!-- ✅ Stylish Yes / No Buttons -->
+  <div class="flex justify-center gap-6">
+    <button 
+      id="yesBtn"
+      class="px-6 py-2 rounded-full bg-green-600 hover:bg-green-700 text-white font-bold shadow-md transition">
+       Yes
+    </button>
+    <button 
+      id="noBtn"
+      class="px-6 py-2 rounded-full bg-red-600 hover:bg-red-700 text-white font-bold shadow-md transition">
+       No
+    </button>
+  </div>
+
+  <p id="watchMsg" class="mt-4 text-sm text-red-400 hidden">Please watch the video before applying.</p>
+  
+  <button 
+    id="backBtn" 
+    onclick="window.location.href='index.html#videowala'" 
+    class="hidden mt-4 px-6 py-2 rounded-full bg-gray-800 hover:bg-gray-700 text-yellow-400 transition flex items-center gap-2 mx-auto">
+    <i data-feather="arrow-left"></i> Watch Video
+  </button>
+</div>
+
+
+        <!-- STEP 2: Original Full Form -->
+      
+      </div>
+
+
+    <!-- ✅ Application Form Wrapper (hidden by default) -->
+<div id="formWrapper" class="hidden opacity-0 translate-y-4 transition-all duration-700">
+  <div class="rounded-3xl border border-yellow-400/30 bg-gray-900/80 backdrop-blur p-6 md:p-10 shadow-xl mt-6">
+    <form id="applicationForm" class="space-y-6">
+  <form id="applicationForm" class="space-y-6 ">
+          <div>
+            <h2 class="text-xl font-semibold mb-4" style="white-space: nowrap;"> Personal Details <span style="color: red; font-weight: bold;"> *</span></h2>
+            <div class="grid md:grid-cols-2 gap-4">
+              <input type="text" placeholder="Full Name" class="w-full rounded-lg bg-gray-800/60 border border-white/10 px-4 py-3">
+              <input 
+  type="tel" 
+  placeholder="Contact Number" 
+  pattern="[0-9]{10}" 
+  maxlength="10"
+  class="w-full rounded-lg bg-gray-800/60 border border-white/10 px-4 py-3" 
+  required
+>
+
+
+
+              <!-- <input type="number" placeholder="Contact Number" min=10 maxlength="10" max="10" class="w-full rounded-lg bg-gray-800/60 border border-white/10 px-4 py-3"> -->
+              <input type="email" placeholder="Email Id" class="w-full rounded-lg bg-gray-800/60 border border-white/10 px-4 py-3">
+              <input type="text" placeholder="City" class="w-full rounded-lg bg-gray-800/60 border border-white/10 px-4 py-3">
+              <input type="text" placeholder="State" class="w-full rounded-lg bg-gray-800/60 border border-white/10 px-4 py-3">
+              <input type="text" placeholder="Country" class="w-full rounded-lg bg-gray-800/60 border border-white/10 px-4 py-3">
+            </div>
+          </div>
+
+          <!-- 3) Eligibility Criteria -->
+          <div>
+            <h2 class="text-xl font-semibold mb-4" style="white-space: nowrap;"> Eligibility Criteria <span style="color: red; font-weight: bold;"> *</span></h2>
+            <label class="block mb-2">Qualification</label>
+            <div class="text-lg md:text-xl text-gray-300 
+            grid grid-cols-2 gap-3
+            md:flex md:items-baseline md:justify-around md:flex-wrap">
+            <!-- <div class="space-y-2 text-lg md:text-xl grid grid-template-columns-repeat(2,1fr) text-gray-300" style="display: flex; align-items: baseline;justify-content: space-around; flex-wrap: wrap; gap: 5px;"> -->
+              <label class="flex items-baseline gap-2"><input type="radio" name="qualification" value="Graduate"> Graduate</label>
+              <label class="flex items-baseline gap-2"><input type="radio" name="qualification" value="Post Graduate"> Post Graduate</label>
+              <label class="flex items-baseline gap-2"><input type="radio" name="qualification" value="Doctorate"> Doctorate</label>
+              <label class="flex items-baseline gap-2"><input type="radio" name="qualification" value="Others"> Others</label>
+            </div>
+          </div>
+
+          <!-- 4) Age -->
+          <div>
+            <label class="block font-semibold mb-2" style="white-space: nowrap;"> Age <span style="color: red; font-weight: bold;"> *</span></label>
+            <input type="number" placeholder="Enter your age" class="w-full rounded-lg bg-gray-800/60 border border-white/10 px-4 py-3">
+          </div>
+
+          <!-- 5) Profession -->
+          <div>
+            <h2 class="text-xl font-semibold mb-4"> Profession <span style="color: red; font-weight: bold;"> *</span></h2>
+            <!-- <div class="space-y-2 text-lg md:text-xl text-gray-300"> -->
+                <div class="space-y-2 text-lg md:text-xl text-gray-300" style="display: flex; align-items: self-end;justify-content: space-around; flex-wrap: wrap; gap: 5px;">
+              <label class="flex items-baseline gap-2"><input type="radio" name="profession" value="Salaried"> Salaried</label>
+              <label class="flex items-baseline gap-2"><input type="radio" name="profession" value="Business"> Business</label>
+              <label class="flex items-baseline gap-2"><input type="radio" name="profession" value="Others"> Others</label>
+            </div>
+          </div>
+
+          <!-- Investment Info -->
+          <!-- <div class="bg-gray-800/60 border border-yellow-400/20 rounded-lg p-4">
+            <p>Required investment: <span class="font-semibold text-yellow-400">₹8,44,425</span></p>
+            <p>Current Offer: <span class="font-semibold text-green-400">₹5,55,555</span></p>
+            <p>Savings: <span class="font-semibold text-blue-400">₹2,88,870</span></p>
+          </div> -->
+          <!-- Investment Info Section -->
+<div class="bg-gradient-to-r from-gray-900 to-gray-800 border border-yellow-400/40 rounded-xl p-6 shadow-lg">
+  <!-- <h3 class="text-xl font-bold text-yellow-400 mb-3">💡 Exclusive Investment Offer</h3> -->
+  <ul class="list-disc pl-6 space-y-2 text-gray-200">
+    <li><span class="text-yellow-300 font-semibold">Required Investment:</span> ₹8,44,425</li>
+    <li><span class="text-green-400 font-semibold">Current Offer Price:</span> ₹5,55,555</li>
+    <li><span class="text-blue-400 font-semibold">You Save:</span> ₹2,88,870 🎉</li>
+  </ul>
+  <!-- <p class="mt-3 text-sm text-gray-400 italic">⚡ Limited period offer — Grab it now!</p> -->
+</div>
+
+
+          <!-- 6) Fund Status -->
+          <div>
+            <h2 class="text-xl font-semibold mb-4" style="white-space: nowrap;"> What is your fund’s status? <span style="color: red; font-weight: bold;"> *</span></h2>
+            <!-- <div class="space-y-2 text-lg md:text-xl text-gray-300"> -->
+                            <div class="space-y-2 text-lg md:text-xl text-gray-300" style="display: flex; align-items: baseline;justify-content: space-around; flex-wrap: wrap; gap: 5px;">
+              <label class="flex items-baseline gap-2"><input type="radio" name="funds" value="Available"> Available</label>
+              <label class="flex items-baseline gap-2"><input type="radio" name="funds" value="Can be arranged"> Can be arranged</label>
+            </div>
+          </div>
+
+          <!-- 7) Feedback -->
+          <div>
+            <h2 class="text-xl font-semibold mb-4"> Write 3 points that you liked the most about Iris Analysis Business</h2>
+            <div class="space-y-3">
+              <input type="text" placeholder="1" name="p1"  class="w-full rounded-lg bg-gray-800/60 border border-white/10 px-4 py-3">
+              <input type="text" placeholder="2" name="p2"  class="w-full rounded-lg bg-gray-800/60 border border-white/10 px-4 py-3">
+              <input type="text" placeholder="3" name="p3"  class="w-full rounded-lg bg-gray-800/60 border border-white/10 px-4 py-3">
+            </div>
+          </div>
+
+              <div>
+            <h2 class="text-xl font-semibold mb-4">Please Write 3 strengths or qualities that make you a good fit for this business.</h2>
+            <div class="space-y-3">
+              <input type="text" placeholder="1" name="q1"   class="w-full rounded-lg bg-gray-800/60 border border-white/10 px-4 py-3">
+              <input type="text" placeholder="2" name="q2"  class="w-full rounded-lg bg-gray-800/60 border border-white/10 px-4 py-3">
+              <input type="text" placeholder="3" name="q3" class="w-full rounded-lg bg-gray-800/60 border border-white/10 px-4 py-3">
+            </div>
+          </div>
+
+          <!-- ✅ Baaki aapka pura form jaisa ka taisa rahega (Qualification, Age, Profession, Funds, Feedback, Qualities, Investment, Reset, Submit buttons) -->
+
+          <div class="text-right">
+            <button type="reset" class="px-10 py-2 rounded-full bg-red-600 text-white font-bold hover:bg-red-700 transition">Reset</button>
+            <button type="submit" class="px-10 py-2 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-600 text-black font-bold hover:from-yellow-500 hover:to-yellow-700 transition">Submit</button>
+          </div>
+        </form>
+        </div>
+        </div>
+
+      
+    </section>
+
+    <script>
+      feather.replace();
+
+     const yesBtn = document.getElementById("yesBtn");
+  const noBtn = document.getElementById("noBtn");
+  const videoStep = document.getElementById("videoStep");
+  const formWrapper = document.getElementById("formWrapper");
+  const msg = document.getElementById("watchMsg");
+  const backBtn = document.getElementById("backBtn");
+
+  yesBtn.addEventListener("click", () => {
+    // video step hide
+    // videoStep.classList.add("hidden");
+    // form show with smooth animation
+    formWrapper.classList.remove("hidden");
+      msg.classList.add("hidden");
+    backBtn.classList.add("hidden");
+    setTimeout(() => {
+      formWrapper.classList.remove("opacity-0", "translate-y-4");
+      formWrapper.classList.add("opacity-100", "translate-y-0");
+   
+    }, 50);
+  });
+
+  noBtn.addEventListener("click", () => {
+    msg.classList.remove("hidden");
+    backBtn.classList.remove("hidden");
+    formWrapper.classList.add("hidden");
+
+          // formWrapper.classList.add("opacity-100", "translate-y-0");
+    
+
+  });
+
+      // ✅ ORIGINAL SUBMIT SCRIPT (aapka pura code same hai, sirf watchedFirst ko watched me map kar diya)
+      // const scriptURL = "https://script.google.com/macros/s/AKfycby8QyoaZrueoPRCgi8c8LHjEj_7IFEBhKMVqPyGTR1tSo453r3Gp-SBjVidnpEmA_GF/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbzk_B7TeGzGzqK8V7vkrMtmF7Xd6NKzFvdmIZ-WgGIWfmJ5XecMDCZuICdDQiWF2GRH/exec"
+      document.getElementById("applicationForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        document.getElementById("loader").classList.remove("hidden");
+
+        const data = {
+          watched: "Yes", // Step1 me Yes hone ke baad hi form aata hai
+          fullName: document.querySelector("input[placeholder='Full Name']").value,
+          contactNumber: document.querySelector("input[placeholder='Contact Number']").value,
+          email: document.querySelector("input[placeholder='Email Id']").value,
+          city: document.querySelector("input[placeholder='City']").value,
+          state: document.querySelector("input[placeholder='State']").value,
+          country: document.querySelector("input[placeholder='Country']").value,
+          qualification: document.querySelector("input[name='qualification']:checked")?.value || "",
+          age: document.querySelector("input[placeholder='Enter your age']").value,
+          profession: document.querySelector("input[name='profession']:checked")?.value || "",
+          funds: document.querySelector("input[name='funds']:checked")?.value || "",
+          pointA: document.querySelector("input[name='p1']")?.value,
+          pointB: document.querySelector("input[name='p2']")?.value,
+          pointC: document.querySelector("input[name='p3']")?.value,
+          qualityA: document.querySelector("input[name='q1']")?.value,
+          qualityB: document.querySelector("input[name='q2']")?.value,
+          qualityC: document.querySelector("input[name='q3']")?.value
+        };
+
+        let requiredFields = ["fullName","contactNumber","email","city","state","country","qualification","age","profession","funds"];
+        for (let key of requiredFields) {
+          if (!data[key]) {
+            alert(`Please fill in the ${key} field`);
+            document.getElementById("loader").classList.add("hidden");
+            return;
+          }
+        }
+
+        fetch(scriptURL, {
+          method: "POST",
+          body: JSON.stringify(data)
+        })
+        .then(res => res.json())
+        .then(res => {
+          if (res.result === "success") {
+            window.location.href = "thankyou.html?name=" + encodeURIComponent(data.fullName);
+          } else {
+            alert("Something went wrong. Try again!");
+            document.getElementById("loader").classList.add("hidden");
+          }
+        })
+        .catch(err => {
+          console.error("Error:", err);
+          alert("Error submitting form!");
+          document.getElementById("loader").classList.add("hidden");
+        });
+      });
+    </script>
+  </body>
+</html>

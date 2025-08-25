@@ -1,0 +1,148 @@
+<!-- 
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Thank You</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px) scale(0.95); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .animate-fadeInUp {
+      animation: fadeInUp 1s ease-out forwards;
+    }
+  </style>
+</head>
+<body class="bg-gray-950 text-gray-200 flex items-center justify-center min-h-screen px-6 relative">
+
+
+  <div class="absolute inset-0 flex items-center justify-center opacity-10">
+    <img src="https://static.readdy.ai/image/a5d655f5c8f75147d41d06872b2be191/c6daa1b5a931d29206f6872f9247aecc.png" 
+         alt="Background Logo" 
+         class="w-[350px] md:w-[600px] blur-sm">
+  </div>
+
+
+  <div class="relative max-w-3xl text-center animate-fadeInUp bg-gray-900/60 backdrop-blur-lg p-8 md:p-12 rounded-2xl shadow-xl">
+    
+
+    <h1 class="text-3xl md:text-5xl font-extrabold text-yellow-400 mb-6 drop-shadow-lg leading-snug">
+      Thank You for Applying 🙏 
+      <br>
+      <span id="userNameUser" class="block text-2xl mt-3 md:text-4xl text-white font-bold mt-3"></span>
+    </h1>
+
+    <p class="text-lg md:text-xl leading-relaxed text-gray-300 mb-6">
+      We truly appreciate your interest in our business opportunity.
+    </p>
+
+    <p class="text-lg md:text-xl leading-relaxed text-gray-300 mb-6">
+      We’ve received an overwhelming response and are currently shortlisting a limited number of applicants.
+    </p>
+
+    <p class="text-lg md:text-xl leading-relaxed text-gray-300 mb-6">
+      Our team is reviewing all submissions carefully — if your profile is shortlisted, someone from our team will get back to you shortly with the next steps.
+    </p>
+
+    <p class="text-lg md:text-xl leading-relaxed text-gray-200 font-semibold">
+      Thank you once again for your time and enthusiasm!
+    </p>
+
+
+    <a href="index.html" 
+       class="mt-10 inline-block px-6 py-3 md:px-10 md:py-4 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-600 text-black font-bold text-lg md:text-xl hover:from-yellow-500 hover:to-yellow-700 transition shadow-lg">
+       Back to Home
+    </a>
+  </div>
+
+  <script>
+    // URL se name     const params = new URLSearchParams(window.location.search);
+    const userName = params.get("name") || "Applicant";
+
+   
+    document.querySelector("#userNameUser").innerText = decodeURIComponent(userName);
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Thank You</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px) scale(0.95); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .animate-fadeInUp {
+      animation: fadeInUp 1s ease-out forwards;
+    }
+  </style>
+</head>
+<body class="bg-black flex items-center justify-center min-h-screen p-4">
+
+  <div class="bg-white rounded-2xl   max-w-full md:max-w-4xl p-6 sm:p-8 md:p-12 text-center shadow-xl animate-fadeInUp">
+    
+    <!-- Optional Logo/Icon -->
+    <div class="mb-6">
+      <img src="https://static.readdy.ai/image/a5d655f5c8f75147d41d06872b2be191/c6daa1b5a931d29206f6872f9247aecc.png"
+           alt="Logo"
+           class="w-16 h-16 mx-auto animate-bounce">
+    </div>
+
+    <!-- Personalized Headline -->
+    <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-800 mb-6 leading-snug">
+      Thank You for Applying 
+      <br>
+      <span id="userName" class="block text-yellow-600 mt-2"></span>
+    </h1>
+
+    <!-- Paragraphs -->
+    <p class="text-2xl sm:text-xl text-gray-600 mb-4" style="font-weight: bold;">
+      We truly appreciate your interest in our business opportunity.
+    </p>
+    <p class="text-lg sm:text-xl text-gray-600 mb-4" style="font-weight: bold;">
+      We’ve received an overwhelming response and are currently shortlisting a limited number of applicants.
+    </p>
+    <p class="text-xl sm:text-xl text-gray-600 mb-4" style="font-weight: bold;">
+      Our team is reviewing all submissions carefully — if your profile is shortlisted, someone from our team will get back to you shortly with the next steps.
+    </p>
+    <p class="text-xl sm:text-xl text-gray-800 font-bold mb-6">
+      Thank you once again for your time and enthusiasm!
+    </p>
+
+    <!-- CTA Button -->
+    <a href="index.html"
+       class="inline-block bg-yellow-600 text-white font-semibold text-lg sm:text-xl py-3 px-8 rounded-full hover:bg-yellow-700 transition transform hover:scale-105 shadow-lg">
+      Back to Home
+    </a>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const name = decodeURIComponent(params.get("name") || "Applicant");
+    document.getElementById("userName").innerText = name;
+  </script>
+</body>
+</html>
